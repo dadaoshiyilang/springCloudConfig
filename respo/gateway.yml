@@ -1,0 +1,38 @@
+server:
+  port: 8081
+
+zuul:
+  routes:
+    api-a:
+      path: /api-user/**
+      serviceId: user
+    api-b:
+      path: /api-meeting/**
+      serviceId: meeting
+    api-c:
+      path: /api-auth/**
+      serviceId: auth
+
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+  # 默认会过滤authorization、set-cookie、cookie、host、connection、content-length、content-encoding、server、transfer-encoding、x-application-context
+  sensitive-headers:
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+   root: info
+
