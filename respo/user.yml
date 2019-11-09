@@ -3,10 +3,10 @@ server:
 
 spring:
   datasource:
-    username: test_kitedge_aib
-    password: RMneWj#K6H@q9EIqNLT*aBw1kg
+    username: root
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://rds4231i4bf47j2pv069o.mysql.rds.aliyuncs.com:3306/test_kitedge_aib?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/test_kitedge_aib?useUnicode=true&characterEncoding=utf8&useSSL=false
     type: com.alibaba.druid.pool.DruidDataSource
     # 数据库初始化
     # initialization-mode: always
